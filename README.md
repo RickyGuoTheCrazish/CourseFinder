@@ -1,11 +1,13 @@
 Project Name:CourseFinder
 -------------------------
 Maven project
+
 Library Environment: JRE System library(J2SE1.5 or above)
 
 Workload
 -------------------------
 Currently able to save and print courses of UNSW according to its subject name, in a format of nested arraylist example format[[Subject href, subject abbreviation, coursecode A, coursecode B..X],[...],[...]]
+
 Save and print courses of UTS according to its subject name, format is little bit different from UNSW courses, but still nested arraylist
 
 Example of output
