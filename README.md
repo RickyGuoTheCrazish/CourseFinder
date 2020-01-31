@@ -24,3 +24,5 @@ To do
 SQL/Mango db design and implementation
 
 Front-end implementation
+
+Classify 1st year courses and other level courses
