@@ -2,21 +2,15 @@ package temp1;
 
 
 
-
-import java.io.IOException;
-import java.util.ArrayList;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
 public class codescraping {
  
 
 	public static void main(String[] args) {
 		String query ="";
-			
+		//for uni of syd
+		usydCourseSearch.getUSYDSearchResults(query);
+		System.out.println(usydCourseSearch.programList);
+		
 		//for uts
 		query = utsCourseSearch.mainpage;
 		utsCourseSearch.getUTSSearchResults(query);
@@ -32,7 +26,7 @@ public class codescraping {
 
 
 		
-		//for uni of syd
+		
 		
 
 	}
