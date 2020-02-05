@@ -47,14 +47,11 @@ public class usydCourseSearch {
 			ArrayList<String> coursesFromPrograms = getUSYDCourses(programHref);
 			programList.add(coursesFromPrograms);
 		}
-		String path = "/Users/Richrad/Documents/workspace/CourseFinder/tmp/usydstats.csv";
+		String path = "/Users/Richrad/Documents/workspace/CourseFinder/tmp/usydfirstyear.csv";
 		CSVWriter writer;
 		try {
 			writer = new CSVWriter(new FileWriter(path));
 			List<ArrayList<String>> tmplist = programList;
-			
-			//for(ArrayList<String> m : tmplist) {
-				//System.out.println(tmplist.get(0));
 				int k = 0;
 				while(k<tmplist.size()) {
 					ArrayList<String> tmpAS = tmplist.get(k);
@@ -66,12 +63,9 @@ public class usydCourseSearch {
 					String[] entries = stringset;
 					//entries have to be String[]
 				    writer.writeNext(entries);
-
 					k++;
 				}
-			
-			writer.close();
-			
+			writer.close();		
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -113,8 +107,14 @@ public class usydCourseSearch {
 				if(hrefLink.matches(".*\\s\\w{4}\\d{4}.*")) {
 					String[] onlycodes = hrefLink.split("\\s");
 					for(String onlycode : onlycodes) {
-						if(onlycode.matches("\\w{4}\\d{4}")) 
-							courses.add(onlycode);
+						if(onlycode.matches("\\w{4}\\d{4}")) {
+							if(onlycode.matches("\\w{4}1\\d{3}")) {
+								//here only insert first year course since complete data has been done
+								//files will be saved in usydfirstyear.csv
+								courses.add(onlycode);
+							}
+
+						} 
 					}
 				}
 				else continue;

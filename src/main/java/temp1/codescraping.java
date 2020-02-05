@@ -8,10 +8,11 @@ public class codescraping {
 	public static void main(String[] args) {
 		String query ="";
 		//for uts
+		/*
 		query = utsCourseSearch.mainpage;
 		utsCourseSearch.getUTSSearchResults(query);
 		//System.out.println(utsCourseSearch.programList);
-		
+		*/
 		
 		
 		//for uni of syd

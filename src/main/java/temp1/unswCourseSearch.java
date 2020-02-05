@@ -82,7 +82,7 @@ public class unswCourseSearch {
 		} catch (IOException e) {
 			e.printStackTrace(); 
 		}
-		String path = "/Users/Richrad/Documents/workspace/CourseFinder/tmp/unswstats.csv";
+		String path = "/Users/Richrad/Documents/workspace/CourseFinder/tmp/unswfirstyear.csv";
 		CSVWriter writer;
 		try {
 			writer = new CSVWriter(new FileWriter(path));
@@ -119,8 +119,14 @@ public class unswCourseSearch {
 			for(Element course: courseResults) {
 				String tempCourseName = course.text();
 				if(tempCourseName.matches(".*\\w{4}\\d{4}.*")) {
+					//here only insert first year course since complete data has been done
+					//files will be saved in usydfirstyear.csv
+					if(tempCourseName.matches(".*\\w{4}1\\d{3}.*")) {
+						temp.add(tempCourseName);
+
+					}
 					//System.out.println(tempCourseName);
-					temp.add(tempCourseName);
+					//temp.add(tempCourseName);
 				}
 			}
 			//System.out.println(courseResults);
