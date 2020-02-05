@@ -1,12 +1,17 @@
 package temp1;
 
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
+import com.opencsv.CSVWriter;
+
 
 public class unswCourseSearch {
 	public static final String mainpage = "https://www.handbook.unsw.edu.au";
@@ -76,6 +81,7 @@ public class unswCourseSearch {
 		} catch (IOException e) {
 			e.printStackTrace(); 
 		}
+	   
 		return programList;
 	}
 	

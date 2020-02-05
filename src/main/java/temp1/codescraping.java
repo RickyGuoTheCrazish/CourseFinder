@@ -7,14 +7,18 @@ public class codescraping {
 
 	public static void main(String[] args) {
 		String query ="";
-		//for uni of syd
-		usydCourseSearch.getUSYDSearchResults(query);
-		System.out.println(usydCourseSearch.programList);
-		
 		//for uts
 		query = utsCourseSearch.mainpage;
 		utsCourseSearch.getUTSSearchResults(query);
 		System.out.println(utsCourseSearch.programList);
+		
+		/*
+		
+		//for uni of syd
+		usydCourseSearch.getUSYDSearchResults(query);
+		System.out.println(usydCourseSearch.programList);
+		
+
 		
 		//for unsw
 		query =	unswCourseSearch.mainpage;
@@ -23,7 +27,7 @@ public class codescraping {
 		//print out all unsw courses according to its subject name in a format of a nested arraylist
 		System.out.println(unswCourseSearch.programList);
 		
-
+		*/
 
 		
 		

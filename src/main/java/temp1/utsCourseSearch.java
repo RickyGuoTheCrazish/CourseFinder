@@ -2,11 +2,14 @@ package temp1;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
+import java.util.List;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import com.opencsv.CSVWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class utsCourseSearch {
 	public static final String mainpage = "https://www.handbook.uts.edu.au/directory/majors.html";
@@ -49,6 +52,21 @@ public class utsCourseSearch {
 		} catch (IOException e) {
 			e.printStackTrace(); 
 		}
+		List<ArrayList<String>> tmplist = programList;
+		String[] stringset = new String[50];
+		//for(ArrayList<String> m : tmplist) {
+			//System.out.println(tmplist.get(0));
+			int k = 0;
+			while(k<tmplist.size()) {
+				ArrayList<String> tmpAS = tmplist.get(k);
+				for(int a = 0; a<tmpAS.size();a++) {
+					stringset[a] = tmpAS.get(a);
+				}
+				k++;
+			}
+		//}
+
+		
 		return programList;
 	}
 	
