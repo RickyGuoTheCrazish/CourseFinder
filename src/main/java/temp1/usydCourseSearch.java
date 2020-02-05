@@ -1,14 +1,18 @@
 package temp1;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements; 
+import org.jsoup.select.Elements;
+
+import com.opencsv.CSVWriter; 
 
 /*
  * Some USYD majors have no available courses to enroll
@@ -42,6 +46,35 @@ public class usydCourseSearch {
 			}
 			ArrayList<String> coursesFromPrograms = getUSYDCourses(programHref);
 			programList.add(coursesFromPrograms);
+		}
+		String path = "/Users/Richrad/Documents/workspace/CourseFinder/tmp/usydstats.csv";
+		CSVWriter writer;
+		try {
+			writer = new CSVWriter(new FileWriter(path));
+			List<ArrayList<String>> tmplist = programList;
+			
+			//for(ArrayList<String> m : tmplist) {
+				//System.out.println(tmplist.get(0));
+				int k = 0;
+				while(k<tmplist.size()) {
+					ArrayList<String> tmpAS = tmplist.get(k);
+					String[] stringset = new String[tmpAS.size()];
+
+					for(int a = 0; a<tmpAS.size();a++) {
+						stringset[a] = tmpAS.get(a);
+					}
+					String[] entries = stringset;
+					//entries have to be String[]
+				    writer.writeNext(entries);
+
+					k++;
+				}
+			
+			writer.close();
+			
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 		return programList;
 	}

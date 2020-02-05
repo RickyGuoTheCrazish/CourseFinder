@@ -10,13 +10,14 @@ public class codescraping {
 		//for uts
 		query = utsCourseSearch.mainpage;
 		utsCourseSearch.getUTSSearchResults(query);
-		System.out.println(utsCourseSearch.programList);
+		//System.out.println(utsCourseSearch.programList);
 		
-		/*
+		
 		
 		//for uni of syd
+		query = "";
 		usydCourseSearch.getUSYDSearchResults(query);
-		System.out.println(usydCourseSearch.programList);
+		//System.out.println(usydCourseSearch.programList);
 		
 
 		
@@ -25,9 +26,9 @@ public class codescraping {
 		//String query = "https://sydney.edu.au/courses/subject-areas/major/banking-non-commerce.html";
 		unswCourseSearch.getUNSWSearchResults(query);
 		//print out all unsw courses according to its subject name in a format of a nested arraylist
-		System.out.println(unswCourseSearch.programList);
+		//System.out.println(unswCourseSearch.programList);
 		
-		*/
+		
 
 		
 		

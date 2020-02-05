@@ -52,7 +52,7 @@ public class utsCourseSearch {
 		} catch (IOException e) {
 			e.printStackTrace(); 
 		}
-		String path = "/Users/Richrad/Documents/workspace/CourseFinder/tmp/developer.csv";
+		String path = "/Users/Richrad/Documents/workspace/CourseFinder/tmp/utsstats.csv";
 		CSVWriter writer;
 		try {
 			writer = new CSVWriter(new FileWriter(path));
